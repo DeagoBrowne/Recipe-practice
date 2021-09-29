@@ -36,7 +36,7 @@ function: Finished;
 function: Close(OvenDoor);
 function: Open(OvenDoor);
 function: Use(Using);
-function: eat;
+function: Eat;
 
 Begin;
 
