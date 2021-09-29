@@ -1,0 +1,118 @@
+function: Take(from cupboard/fridge/drawer);
+function: Chicken(skinless chicken breast);
+function: Vegetables(Onions/Garlic/BellPepper);
+function: Fill;
+function: Place;
+function: Dice(Onions/Garlic);
+function: Slice(BellPepper);
+function: Add;
+function: Remove;
+function: Cut(Foil);
+function: WashHands;
+function: Wrap(Foil);
+function: Unwrap(Foil);
+function: Stop;
+function: Rub(Seasoning);
+function: PreHeat(Oven);
+function: On(Oven/Stove);
+function: Off(Oven/Stove);
+function: CleanUp;
+function: Repeat;
+function: Wash(Rice);
+function: UntilCovered;
+function: Check;
+function: Increase(Temp);
+function: Lower(Temp);
+function: Measure(inches);
+function: Wait(minutes);
+function: Until;
+function: Temp(Celsius);
+function: Stir;
+function: With;
+function: Aside;
+function: Onto;
+function; Into;
+function: Finished;
+function: Close(OvenDoor);
+function: Open(OvenDoor);
+function: Use(Using);
+function: eat;
+
+Begin;
+
+Take(Rice, CoffeeCup, Saucepan);
+
+If(Rice) Then Fill(CoffeeCup);
+If(CoffeeCup, Rice) Then Fill(Saucepan);
+Repeat;
+
+If(Saucepan, Rice) Then Fill(CleanWater) UntilCovered(Rice) Then Stop;
+Wash;
+Remove(Water) From(Saucepan, Rice);
+Repeat;
+
+Take(CoffeeCup) Then Fill(CleanWater);
+If(Saucepan, Rice) Then Add(CleanWater);
+Repeat(4x);
+
+If(Saucepan, Rice, CleanWater) Then Place(Hob);
+If(Hob, Saucepan) Then On(Max);
+
+Check;
+If(Boiling) Then Lower(Medium) Else Wait(5);
+Repeat Until(Boiling);
+
+If(Oven) Then On;
+Increase(200) Then PreHaet;
+
+Take(ChoppingBoard, SharpKnife, Vegetables);
+If(Onions, Garlic,) Then Remove(Skin, Shell) Else If(BellPepper) Then Remove(Seeds, Stem) With(SharpKife);
+Dice Then Slice;
+Place(Vegetables) Onto(ChoppingBoard) Then Place(Aside);
+
+Take(MixingBowl, Chicken, Foil);
+Place(Chicken) Into(MixingBowl);
+Add(Seasoning) UntilCovered Then Rub(Chicken);
+Place(MixingBowl, Chicken) Aside;
+WashHands;
+
+Take(WoodenSpoon);
+Check(Saucepan) Then Stir(Rice) With(WoodenSpoon);
+Stop;
+
+Place(WoodenSpoon) Aside;
+
+Take(Foil) Then Cut Measure(15x13);
+Place(FoilSheet) Onto(Surface);
+Place Chicken(1) Onto(FoilSheet);
+Place(Vegetables) Onto(Chicken, FoilSheet);
+Wrap;
+Repeat Until(Finished);
+
+WashHands;
+
+Take(BakingTray);
+Place(FoilWrap) Onto(BakingTray);
+Repeat Until(Finished);
+
+Open Then Place(BakingTray, FoilWrap) Into(Oven)
+Close;
+
+CleanUp;
+
+Check(Saucepan);
+If Rice(Cooked) Then Off(Hob) Else Wait(10);
+Repeat Until(Cooked);
+
+Wait(20) Then Check(FoilWrap);
+If(NotCooked) Then Wait(10) Else Off(Oven);
+Repeat Until(Cooked);
+
+Take(DinnerPlate) Then Place(DinnerPlate) Onto(Surface);
+Take(FoilWrap) Then Unwrap;
+Place(Chicken, Vegetables) Onto(DinnerPlate) Then Remove(Foil);
+Take(WoodenSpoon) Then Place(Rice) Onto(DinnerPlate, Chicken, Vegetables) Using(WoodenSpoon);
+
+Take(Untensils DinnerPlate, Chicken, Vegetables) Then Eat;
+
+End;
