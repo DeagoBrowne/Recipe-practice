@@ -72,7 +72,7 @@ Place(Vegetables) Onto(ChoppingBoard) Then Place(Aside);
 
 Take(MixingBowl, Chicken, Foil);
 Place(Chicken) Into(MixingBowl);
-Add(Seasoning) UntilCovered Then Rub(Chicken);
+Add(Seasoning) UntilCovered Then Rub(Chicken) Using(Hand);
 Place(MixingBowl, Chicken) Aside;
 WashHands;
 
@@ -112,6 +112,7 @@ Take(DinnerPlate) Then Place(DinnerPlate) Onto(Surface);
 Take(FoilWrap) Then Unwrap;
 Place(Chicken, Vegetables) Onto(DinnerPlate) Then Remove(Foil);
 Take(WoodenSpoon) Then Place(Rice) Onto(DinnerPlate, Chicken, Vegetables) Using(WoodenSpoon);
+Repeat Until(Finished);
 
 Take(Untensils DinnerPlate, Chicken, Vegetables) Then Eat;
 
